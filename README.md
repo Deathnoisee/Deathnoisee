@@ -1,16 +1,14 @@
-## Hi there 👋
+<div align="center">
 
-<!--
-**Deathnoisee/Deathnoisee** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+<img src="cyberpunk-banner.svg" alt="Terki Rayane" width="100%" />
 
-Here are some ideas to get you started:
+</div>
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+<br>
+<br>
+
+<div align="center">
+
+<img src="https://streak-stats.demolab.com/?user=trrayane&theme=tokyonight&hide_border=true" height="165" />
+
+</div>
