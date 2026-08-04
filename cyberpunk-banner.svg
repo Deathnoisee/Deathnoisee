@@ -137,38 +137,49 @@
     <rect x="792" y="62" width="450" height="516" rx="26" fill="#0E1320" fill-opacity="0.42" stroke="#22D3EE" stroke-opacity="0.3"/>
     <rect x="804" y="74" width="426" height="492" rx="20" fill="none" stroke="#A855F7" stroke-opacity="0.18"/>
 
+    <!-- faint scattered depth dots so the panel doesn't read as empty around the cube -->
+    <g fill="#94A3B8">
+      <circle cx="850" cy="120" r="1.6" opacity="0.35"/>
+      <circle cx="1195" cy="150" r="1.4" opacity="0.3"/>
+      <circle cx="1180" cy="500" r="1.6" opacity="0.3"/>
+      <circle cx="830" cy="520" r="1.4" opacity="0.32"/>
+      <circle cx="1210" cy="330" r="1.4" opacity="0.28"/>
+      <circle cx="825" cy="330" r="1.4" opacity="0.28"/>
+    </g>
+
     <!-- slow orbit ring around the cube -->
-    <g transform="translate(1017 320)">
-      <circle r="150" fill="none" stroke="#A855F7" stroke-opacity="0.22" stroke-width="1.1" stroke-dasharray="2 10">
+    <g transform="translate(1017 328)">
+      <circle r="205" fill="none" stroke="#A855F7" stroke-opacity="0.2" stroke-width="1.1" stroke-dasharray="2 11">
         <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="40s" repeatCount="indefinite"/>
       </circle>
+      <circle r="176" fill="none" stroke="#22D3EE" stroke-opacity="0.12" stroke-width="1"/>
     </g>
 
     <!-- cube faces -->
     <g filter="url(#glowSoft)">
       <!-- top -->
-      <polygon points="1017,190 1112,245 1017,300 922,245" fill="url(#gradCubeTop)" fill-opacity="0.92"/>
-      <line x1="969.5" y1="217.5" x2="1064.5" y2="272.5" stroke="#09090B" stroke-opacity="0.35" stroke-width="1.6"/>
-      <line x1="1064.5" y1="217.5" x2="969.5" y2="272.5" stroke="#09090B" stroke-opacity="0.35" stroke-width="1.6"/>
+      <polygon points="1017,140 1155,220 1017,300 879,220" fill="url(#gradCubeTop)" fill-opacity="0.92"/>
+      <line x1="948" y1="180" x2="1086" y2="260" stroke="#09090B" stroke-opacity="0.35" stroke-width="1.8"/>
+      <line x1="1086" y1="180" x2="948" y2="260" stroke="#09090B" stroke-opacity="0.35" stroke-width="1.8"/>
 
       <!-- left (shadow side) -->
-      <polygon points="922,245 1017,300 1017,450 922,395" fill="url(#gradCubeLeft)" fill-opacity="0.85"/>
-      <line x1="969.5" y1="272.5" x2="969.5" y2="422.5" stroke="#09090B" stroke-opacity="0.4" stroke-width="1.6"/>
-      <line x1="922" y1="320" x2="1017" y2="375" stroke="#09090B" stroke-opacity="0.4" stroke-width="1.6"/>
+      <polygon points="879,220 1017,300 1017,517 879,437" fill="url(#gradCubeLeft)" fill-opacity="0.85"/>
+      <line x1="948" y1="260" x2="948" y2="477" stroke="#09090B" stroke-opacity="0.4" stroke-width="1.8"/>
+      <line x1="879" y1="328.5" x2="1017" y2="408.5" stroke="#09090B" stroke-opacity="0.4" stroke-width="1.8"/>
 
       <!-- right (lit side) -->
-      <polygon points="1017,300 1112,245 1112,395 1017,450" fill="url(#gradCubeRight)" fill-opacity="0.78"/>
-      <line x1="1064.5" y1="272.5" x2="1064.5" y2="422.5" stroke="#09090B" stroke-opacity="0.3" stroke-width="1.6"/>
-      <line x1="1017" y1="375" x2="1112" y2="320" stroke="#09090B" stroke-opacity="0.3" stroke-width="1.6"/>
+      <polygon points="1017,300 1155,220 1155,437 1017,517" fill="url(#gradCubeRight)" fill-opacity="0.78"/>
+      <line x1="1086" y1="260" x2="1086" y2="477" stroke="#09090B" stroke-opacity="0.3" stroke-width="1.8"/>
+      <line x1="1017" y1="408.5" x2="1155" y2="328.5" stroke="#09090B" stroke-opacity="0.3" stroke-width="1.8"/>
     </g>
 
     <!-- pulsing hub where all three faces meet: the shared cube-state vertex -->
-    <circle cx="1017" cy="300" r="5" fill="#F8FAFC" filter="url(#glowStrong)">
-      <animate attributeName="r" values="4;7;4" dur="3.4s" repeatCount="indefinite"/>
+    <circle cx="1017" cy="300" r="6" fill="#F8FAFC" filter="url(#glowStrong)">
+      <animate attributeName="r" values="5;8.5;5" dur="3.4s" repeatCount="indefinite"/>
       <animate attributeName="opacity" values="0.6;1;0.6" dur="3.4s" repeatCount="indefinite"/>
     </circle>
 
-    <text x="1017" y="500" font-family="'JetBrains Mono','IBM Plex Mono','Fira Code',monospace" font-size="12" letter-spacing="2" fill="#94A3B8" text-anchor="middle" opacity="0.6">2×2 · CUBE-STATE ENGINE</text>
+    <text x="1017" y="547" font-family="'JetBrains Mono','IBM Plex Mono','Fira Code',monospace" font-size="13" letter-spacing="2" fill="#94A3B8" text-anchor="middle" opacity="0.6">2×2 · CUBE-STATE ENGINE</text>
 
     <!-- small quiet nods to the other two roles -->
     <g font-family="'JetBrains Mono','IBM Plex Mono','Fira Code',monospace" opacity="0.4">
