@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="cyberpunk-banner.svg" alt="Adlane Hadjmoussa" width="100%" />
+<img src="old.svg" alt="Adlane Hadjmoussa" width="100%" />
 
 </div>
 
