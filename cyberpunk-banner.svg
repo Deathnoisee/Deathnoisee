@@ -133,62 +133,65 @@
   </g>
 
   <!-- Right: signature element — isometric cube (nods to the cube-state platformer mechanic) -->
+  <!-- No containing frame here on purpose: the left side isn't boxed in either, so the cube
+       gets the same open canvas instead of sitting in a window inset from the edges. -->
   <g clip-path="url(#rightClip)">
-    <rect x="792" y="62" width="450" height="516" rx="26" fill="#0E1320" fill-opacity="0.42" stroke="#22D3EE" stroke-opacity="0.3"/>
-    <rect x="804" y="74" width="426" height="492" rx="20" fill="none" stroke="#A855F7" stroke-opacity="0.18"/>
 
-    <!-- faint scattered depth dots so the panel doesn't read as empty around the cube -->
+    <!-- faint scattered depth dots across the open canvas -->
     <g fill="#94A3B8">
-      <circle cx="850" cy="120" r="1.6" opacity="0.35"/>
-      <circle cx="1195" cy="150" r="1.4" opacity="0.3"/>
-      <circle cx="1180" cy="500" r="1.6" opacity="0.3"/>
-      <circle cx="830" cy="520" r="1.4" opacity="0.32"/>
-      <circle cx="1210" cy="330" r="1.4" opacity="0.28"/>
-      <circle cx="825" cy="330" r="1.4" opacity="0.28"/>
+      <circle cx="808" cy="70" r="1.6" opacity="0.32"/>
+      <circle cx="1245" cy="90" r="1.4" opacity="0.28"/>
+      <circle cx="1250" cy="560" r="1.6" opacity="0.28"/>
+      <circle cx="790" cy="580" r="1.4" opacity="0.3"/>
+      <circle cx="1262" cy="320" r="1.4" opacity="0.26"/>
+      <circle cx="780" cy="330" r="1.4" opacity="0.26"/>
+      <circle cx="900" cy="600" r="1.3" opacity="0.24"/>
+      <circle cx="1160" cy="80" r="1.3" opacity="0.24"/>
     </g>
 
-    <!-- slow orbit ring around the cube -->
-    <g transform="translate(1017 328)">
-      <circle r="205" fill="none" stroke="#A855F7" stroke-opacity="0.2" stroke-width="1.1" stroke-dasharray="2 11">
-        <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="40s" repeatCount="indefinite"/>
+    <!-- slow orbit rings around the cube -->
+    <g transform="translate(1024 320)">
+      <circle r="260" fill="none" stroke="#A855F7" stroke-opacity="0.18" stroke-width="1.1" stroke-dasharray="2 12">
+        <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="42s" repeatCount="indefinite"/>
       </circle>
-      <circle r="176" fill="none" stroke="#22D3EE" stroke-opacity="0.12" stroke-width="1"/>
+      <circle r="222" fill="none" stroke="#22D3EE" stroke-opacity="0.1" stroke-width="1"/>
     </g>
 
-    <!-- cube faces -->
-    <g filter="url(#glowSoft)">
-      <!-- top -->
-      <polygon points="1017,140 1155,220 1017,300 879,220" fill="url(#gradCubeTop)" fill-opacity="0.92"/>
-      <line x1="948" y1="180" x2="1086" y2="260" stroke="#09090B" stroke-opacity="0.35" stroke-width="1.8"/>
-      <line x1="1086" y1="180" x2="948" y2="260" stroke="#09090B" stroke-opacity="0.35" stroke-width="1.8"/>
+    <!-- signature element: a shield with a D-pad built into it, and a keyhole cut through
+         the D-pad's own center — one glyph where "secured" and "game" are the same shape,
+         not two objects glued together. Generic to the disciplines, not tied to one project. -->
+    <g transform="translate(1024 285)" filter="url(#glowSoft)">
+      <path d="M0,-180 L160,-135 L160,20 C160,140 90,215 0,255 C-90,215 -160,140 -160,20 L-160,-135 Z"
+            fill="url(#gradPanel)" stroke="url(#gradNeon)" stroke-opacity="0.85" stroke-width="2.5"/>
+      <path d="M0,-180 L160,-135 L160,20 C160,140 90,215 0,255 C-90,215 -160,140 -160,20 L-160,-135 Z"
+            fill="none" stroke="#22D3EE" stroke-opacity="0.15" stroke-width="14"/>
 
-      <!-- left (shadow side) -->
-      <polygon points="879,220 1017,300 1017,517 879,437" fill="url(#gradCubeLeft)" fill-opacity="0.85"/>
-      <line x1="948" y1="260" x2="948" y2="477" stroke="#09090B" stroke-opacity="0.4" stroke-width="1.8"/>
-      <line x1="879" y1="328.5" x2="1017" y2="408.5" stroke="#09090B" stroke-opacity="0.4" stroke-width="1.8"/>
-
-      <!-- right (lit side) -->
-      <polygon points="1017,300 1155,220 1155,437 1017,517" fill="url(#gradCubeRight)" fill-opacity="0.78"/>
-      <line x1="1086" y1="260" x2="1086" y2="477" stroke="#09090B" stroke-opacity="0.3" stroke-width="1.8"/>
-      <line x1="1017" y1="408.5" x2="1155" y2="328.5" stroke="#09090B" stroke-opacity="0.3" stroke-width="1.8"/>
-    </g>
-
-    <!-- pulsing hub where all three faces meet: the shared cube-state vertex -->
-    <circle cx="1017" cy="300" r="6" fill="#F8FAFC" filter="url(#glowStrong)">
-      <animate attributeName="r" values="5;8.5;5" dur="3.4s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0.6;1;0.6" dur="3.4s" repeatCount="indefinite"/>
-    </circle>
-
-    <text x="1017" y="547" font-family="'JetBrains Mono','IBM Plex Mono','Fira Code',monospace" font-size="13" letter-spacing="2" fill="#94A3B8" text-anchor="middle" opacity="0.6">2×2 · CUBE-STATE ENGINE</text>
-
-    <!-- small quiet nods to the other two roles -->
-    <g font-family="'JetBrains Mono','IBM Plex Mono','Fira Code',monospace" opacity="0.4">
-      <text x="822" y="106" font-size="20" fill="#22D3EE">&lt;/&gt;</text>
-      <g transform="translate(1188 96)" stroke="#EC4899" stroke-width="1.6" fill="none">
-        <rect x="-9" y="-2" width="18" height="14" rx="2"/>
-        <path d="M-5 -2 V-7 A5 5 0 0 1 5 -7 V-2"/>
+      <!-- D-pad -->
+      <g transform="translate(0 -50)">
+        <rect x="-70" y="-22" width="140" height="44" rx="9" fill="#F8FAFC" opacity="0.94"/>
+        <rect x="-22" y="-70" width="44" height="140" rx="9" fill="#F8FAFC" opacity="0.94"/>
+        <!-- keyhole cut through the shared center -->
+        <circle cx="0" cy="0" r="10" fill="#09090B"/>
+        <rect x="-3.4" y="0" width="6.8" height="17" fill="#09090B"/>
+        <circle cx="0" cy="0" r="10" fill="none" stroke="#EC4899" stroke-width="2.5"/>
       </g>
     </g>
+
+    <!-- circuit tendrils reaching out from the shield -->
+    <g fill="none" stroke-linecap="round" stroke-width="1.5" opacity="0.45">
+      <path d="M864,150 L800,150 L800,112" stroke="#22D3EE"/>
+      <path d="M1184,150 L1248,150 L1248,112" stroke="#A855F7"/>
+      <path d="M1024,540 L1024,565 L968,592" stroke="#EC4899"/>
+      <path d="M1024,540 L1024,565 L1080,592" stroke="#22D3EE"/>
+    </g>
+    <g fill="#F8FAFC">
+      <circle cx="800" cy="112" r="3" opacity="0.7"/>
+      <circle cx="1248" cy="112" r="3" opacity="0.7"/>
+      <circle cx="968" cy="592" r="2.6" opacity="0.6"/>
+      <circle cx="1080" cy="592" r="2.6" opacity="0.6"/>
+    </g>
+
+    <text x="1024" y="618" font-family="'JetBrains Mono','IBM Plex Mono','Fira Code',monospace" font-size="14" letter-spacing="2" fill="#94A3B8" text-anchor="middle" opacity="0.55">GAME DEV × CYBERSECURITY</text>
   </g>
 
   <!-- global scanline -->
